@@ -44,12 +44,11 @@ export default {
   methods: {
     clickResult () {
       let arr = this.array,
-          result = {},
           arrayOne = [],
-          arraytwo = [];
+          arraytwo = []
 
       // рандомно пересобираю массив
-      arr = arr.sort(() => Math.random() - 0.5);
+      arr = arr.sort(() => Math.random() - 0.5)
 
       if (arr.length % 2 !== 0) {
         this.error = true
@@ -59,18 +58,17 @@ export default {
       // Разбиваю 1 массив на 2 массива
       arr.forEach((item, index) => {
         if ((index + 1) % 2 == 0 ) {
-          arrayOne.push(item);
+          arrayOne.push(item)
         } else {
-          arraytwo.push(item);
+          arraytwo.push(item)
         }
 
-      });
+      })
       // рандомно пересобираю массив arrayOne и arrayTwo
-      arrayOne = arrayOne.sort(() => Math.random() - 0.5);
-      arraytwo = arraytwo.sort(() => Math.random() - 0.5);
+      arrayOne = arrayOne.sort(() => Math.random() - 0.5)
+      arraytwo = arraytwo.sort(() => Math.random() - 0.5)
 
-      arrayOne.forEach((key, i) => result[key] = arraytwo[i]);
-      this.result = result
+      arrayOne.forEach((key, i) => this.result[key] = arraytwo[i])
     },
 
     addPeople () {
@@ -84,7 +82,7 @@ export default {
 
     removePeople () {
       this.error = false
-      this.array = this.array.sort(() => Math.random() - 0.5);
+      this.array = this.array.sort(() => Math.random() - 0.5)
       let lastPeaple = this.array.pop()
       this.lastPeaple = lastPeaple
       this.people = true
