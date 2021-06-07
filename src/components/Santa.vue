@@ -19,10 +19,10 @@
 
     <div class="">
       <button @click="clickResult">result</button> <br>
-      {{resultTest}}
+      {{result}}
     </div>
 
-    <div class="" v-for="(item, index) of resultTest" :key="index">
+    <div class="" v-for="(item, index) of result" :key="index">
       <p>{{item}} и {{index}} стали друг для друга Тайными сантами</p>
     </div>
   </div>
@@ -36,7 +36,6 @@ export default {
       name: '',
       array: [],
       result: {},
-      resultTest: {},
       error: false,
       people: false,
       lastPeaple: ''
@@ -71,7 +70,7 @@ export default {
       arraytwo = arraytwo.sort(() => Math.random() - 0.5);
 
       arrayOne.forEach((key, i) => result[key] = arraytwo[i]);
-      this.resultTest = result
+      this.result = result
     },
 
     addPeople () {
